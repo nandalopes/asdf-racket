@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/nandalopes/asdf-racket/compare/v1.0.0...v1.0.1) (2023-10-26)
+
+
+### Performance Improvements
+
+* use ASDF_CONCURRENCY with make ([5beb277](https://github.com/nandalopes/asdf-racket/commit/5beb277c73abde1443f2560512b8e696491dcec5))
+
 ## 1.0.0 (2023-10-26)
 
 
