@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/nandalopes/asdf-racket/compare/v1.1.0...v1.2.0) (2023-10-30)
+
+
+### Features
+
+* `bin/sort_versions` ([41556e7](https://github.com/nandalopes/asdf-racket/commit/41556e7e556926a61c45821781413962fcbe1de7))
+
 ## [1.1.0](https://github.com/nandalopes/asdf-racket/compare/v1.0.0...v1.1.0) (2023-10-27)
 
 
