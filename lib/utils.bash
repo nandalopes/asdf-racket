@@ -33,6 +33,18 @@ list_all_versions() {
 	curl -s https://download.racket-lang.org/all-versions.html | grep -E -o 'Version [0-9.]+' | cut -d' ' -f 2 | tac
 }
 
+list_installed_versions() {
+	local plugin_installs_path
+
+	plugin_installs_path="$(asdf_data_dir)/installs/racket"
+	if [ -d "$plugin_installs_path" ]; then
+		for install in "${plugin_installs_path}"/*/; do
+			[[ -e $install ]] || break
+			basename "$install"
+		done
+	fi
+}
+
 download_release() {
 	local version filename url platform
 	version="$1"
