@@ -19,6 +19,13 @@ if [ -n "${GITHUB_API_TOKEN:-}" ]; then
 	curl_opts=("${curl_opts[@]}" -H "Authorization: token $GITHUB_API_TOKEN")
 fi
 
+# simulate tac on macOS
+if ! command -v tac &>/dev/null; then
+	tac() {
+		tail -r
+	}
+fi
+
 sort_versions() {
 	sed 'h; s/[+-]/./g; s/.p\([[:digit:]]\)/.z\1/; s/$/.z/; G; s/\n/ /' |
 		LC_ALL=C sort -t. -k 1,1 -k 2,2n -k 3,3n -k 4,4n -k 5,5n | awk '{print $2}'
@@ -31,9 +38,7 @@ list_github_tags() {
 }
 
 list_all_versions() {
-	# TODO: Adapt this. By default we simply list the tag names from GitHub releases.
-	# Change this function if racket has other means of determining installable versions.
-	list_github_tags
+	curl "${curl_opts[@]}" https://download.racket-lang.org/all-versions.html | grep -E -o 'Version [0-9.]+' | cut -d' ' -f 2 | tac
 }
 
 download_release() {
