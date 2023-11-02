@@ -2,7 +2,6 @@
 
 set -euo pipefail
 
-# TODO: Ensure this is the correct GitHub homepage where releases can be downloaded for racket.
 GH_REPO="https://github.com/racket/racket"
 TOOL_NAME="racket"
 TOOL_TEST="racket --version"
@@ -42,12 +41,16 @@ list_all_versions() {
 }
 
 download_release() {
-	local version filename url
+	local version filename url asdf_minimal
 	version="$1"
 	filename="$2"
+	asdf_minimal=""
 
-	# TODO: Adapt the release URL convention for racket
-	url="$GH_REPO/archive/v${version}.tar.gz"
+	if [ "${ASDF_RACKET_MINIMAL-}" ]; then
+		asdf_minimal="-minimal"
+	fi
+
+	url="https://mirror.racket-lang.org/installers/${version}/racket${asdf_minimal}-${version}-src-builtpkgs.tgz"
 
 	echo "* Downloading $TOOL_NAME release $version..."
 	curl "${curl_opts[@]}" -o "$filename" -C - "$url" || fail "Could not download $url"
