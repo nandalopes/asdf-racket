@@ -36,8 +36,12 @@ list_github_tags() {
 		sed 's/^v//' # NOTE: You might want to adapt this sed to remove non-version strings from tags
 }
 
+get_all_versions() {
+	curl "${curl_opts[@]}" https://download.racket-lang.org/all-versions.html
+}
+
 list_all_versions() {
-	curl "${curl_opts[@]}" https://download.racket-lang.org/all-versions.html | grep -E -o 'Version [0-9.]+' | cut -d' ' -f 2 | tac
+	get_all_versions | grep -E -o 'Version [0-9.]+' | cut -d' ' -f 2 | tac
 }
 
 download_release() {
