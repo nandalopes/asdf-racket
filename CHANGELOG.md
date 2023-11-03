@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://github.com/nandalopes/asdf-racket/compare/v0.2.0...v0.3.0) (2023-11-03)
+
+
+### Features
+
+* customize `install_version` ([481b48a](https://github.com/nandalopes/asdf-racket/commit/481b48a1efcd875ad343548855edffcbf1e54a80))
+
 ## [0.2.0](https://github.com/nandalopes/asdf-racket/compare/v0.1.0...v0.2.0) (2023-11-03)
 
 
