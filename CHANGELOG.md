@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.0](https://github.com/nandalopes/asdf-racket/compare/v0.3.0...v0.4.0) (2023-11-03)
+
+
+### Features
+
+* add `bin/latest-stable` command ([55b394d](https://github.com/nandalopes/asdf-racket/commit/55b394dc0db5b142862a1c4b86ef7dc8451c7cc0))
+* future `sort_versions` command ([0eb9112](https://github.com/nandalopes/asdf-racket/commit/0eb9112cc984204f7225b078da36460f93518ede))
+
 ## [0.3.0](https://github.com/nandalopes/asdf-racket/compare/v0.2.0...v0.3.0) (2023-11-03)
 
 
