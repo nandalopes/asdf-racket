@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.2.0](https://github.com/nandalopes/asdf-racket/compare/v0.1.0...v0.2.0) (2023-11-03)
+
+
+### Features
+
+* customize `download_release` ([67480ab](https://github.com/nandalopes/asdf-racket/commit/67480ab966f37b269fb9dbba02a83298d2a9d933))
+
+
+### Bug Fixes
+
+* change racket release file extension ([3aaddb2](https://github.com/nandalopes/asdf-racket/commit/3aaddb2c788317bf3e212842996fb45d24fc82c3))
+
 ## [0.1.0](https://github.com/nandalopes/asdf-racket/compare/v0.0.1...v0.1.0) (2023-11-03)
 
 
