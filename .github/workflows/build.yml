@@ -11,6 +11,7 @@ on:
   pull_request:
     branches-ignore:
       - 'release-please*'
+  workflow_dispatch:
 
 jobs:
   plugin_test:
